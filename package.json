@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/66Willy99/FestivalDeMuisca.git"
+    "url": "git+https://github.com/66Willy99/FestivalDeMusica.git"
   },
   "keywords": [
     "SASS",
@@ -18,7 +18,7 @@
   "author": "Guillermo Mercado",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/66Willy99/FestivalDeMuisca/issues"
+    "url": "https://github.com/66Willy99/FestivalDeMusica/issues"
   },
-  "homepage": "https://github.com/66Willy99/FestivalDeMuisca#readme"
+  "homepage": "https://github.com/66Willy99/FestivalDeMusica#readme"
 }
