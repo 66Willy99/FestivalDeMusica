@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/66Willy99/FestivalDeMusica/issues"
   },
-  "homepage": "https://github.com/66Willy99/FestivalDeMusica#readme"
+  "homepage": "https://github.com/66Willy99/FestivalDeMusica#readme",
+  "devDependencies": {
+    "sass": "^1.85.1"
+  }
 }
