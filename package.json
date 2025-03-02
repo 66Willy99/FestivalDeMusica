@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch src/scss:build/css",
-    "hola": "gulp hola"
+    "css": "gulp css"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/66Willy99/FestivalDeMusica#readme",
   "devDependencies": {
     "gulp": "^5.0.0",
+    "gulp-sass": "^6.0.0",
     "sass": "^1.85.1"
   }
 }
