@@ -16,5 +16,5 @@ export function css(done){
 }
 
 export function dev(){// no se necesita el done por que no se esta ejecutando una tarea asincrona
-    watch( 'src/scss/app.scss', css ) // Se le pasa la tarea css para que se ejecute cuando se detecten cambios en los archivos Sass
+    watch( 'src/scss/**/*.scss', css ) // Se le pasa la tarea css para que se ejecute cuando se detecten cambios en los archivos Sass
 }
