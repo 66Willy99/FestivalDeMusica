@@ -1,0 +1,3 @@
+@forward 'normalize'; // normalize va primero por que se agrega de primeros
+@forward 'variables'; // variables va segundo por que se necesita para global
+@forward 'global';
