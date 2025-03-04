@@ -8,7 +8,7 @@ export function css(done){
     //ubica el archivo scss
     src('src/scss/app.scss') // Archivo de entrada que se usa para ubicar los archivos Sass
         //compila el archivo scss
-        .pipe( sass() ) // Una vez ubicado el archivo busca el pipe para realizar la tarea
+        .pipe( sass().on('error', sass.logError) ) // Una vez ubicado el archivo busca el pipe para realizar la tarea y en caso de haber un error lo muestra en consola
         //Guarda el archivo css en la carpeta build/css
         .pipe( dest('build/css') )
 
