@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     navegacionFija();
     crearGaleria();
+    restaltarEnlace();
 })
 
 function navegacionFija(){
@@ -70,4 +71,25 @@ function cerrarModal(){
         const body = document.querySelector('body');
         body.classList.remove('no-scroll');
     }, 500)
+}
+
+function restaltarEnlace(){
+    document.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.navegacion-principal a');  
+        let act = '';
+        sections.forEach( section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - sectionHeight/3)){
+                act = section.id;
+            }
+        })
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#'+act){
+                link.classList.add('active');
+            }
+        })
+    })
 }

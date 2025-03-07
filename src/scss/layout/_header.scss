@@ -46,7 +46,7 @@
         color: v.$blanco;
         font-size: 2.4rem;
 
-        &:hover {  //Pseudo-clase con &
+        &:hover, &.active {  //Pseudo-clase con &
             color: v.$amarillo;
         }
     }
