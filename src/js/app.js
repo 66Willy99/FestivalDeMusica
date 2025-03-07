@@ -24,7 +24,7 @@ function crearGaleria(){
     const galeria = document.querySelector('.galeria-imagenes')
     for(let i = 1; i<=CANTIDAD_IMAGENES; i++){
         const imagen = document.createElement('IMG');
-        imagen.src = `src/img/gallery/full/${i}.jpg`;
+        imagen.src = `/img/gallery/full/${i}.jpg`;
         imagen.alt = 'Imagen galeria';
 
         //Evemt Handler
@@ -39,7 +39,7 @@ function crearGaleria(){
 
 function mostrarImagen(i){
     const imagen = document.createElement('IMG');
-    imagen.src = `src/img/gallery/full/${i}.jpg`;
+    imagen.src = `/img/gallery/full/${i}.jpg`;
     imagen.alt = 'Imagen galeria';
     
     // Generar Modal

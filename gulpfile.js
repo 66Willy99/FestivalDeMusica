@@ -26,9 +26,15 @@ export function html(done){
     done();
 }
 
+export function imgs(done){
+    src('src/img/**/*') // Ubica todas las imágenes dentro de src/img/
+        .pipe(dest('build/img')) // Copia a build/img/
+    done();
+}
+
 export function dev(){// no se necesita el done por que no se esta ejecutando una tarea asincrona
     watch( 'src/scss/**/*.scss', css ) // Se le pasa la tarea css para que se ejecute cuando se detecten cambios en los archivos Sass
     watch( 'src/js/**/*.js', js )
 }
 
-export default series( js, css, html) // Se ejecutan las tareas js, css y dev en serie
+export default series( js, css, html, imgs) // Se ejecutan las tareas js, css y dev en serie
