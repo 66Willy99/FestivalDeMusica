@@ -25,4 +25,4 @@ export function dev(){// no se necesita el done por que no se esta ejecutando un
     watch( 'src/js/**/*.js', js )
 }
 
-export default series( js, css, dev ) // Se ejecutan las tareas js, css y dev en serie
+export default series( js, css) // Se ejecutan las tareas js, css y dev en serie
