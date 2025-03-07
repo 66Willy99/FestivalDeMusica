@@ -34,7 +34,7 @@ export function imgs(done){
 
 export function video(done){
     src('video/**/*') // Ubica todas las imágenes dentro de src/img/
-        .pipe(dest('build/img')) // Copia a build/img/
+        .pipe(dest('build/video')) // Copia a build/img/
     done();
 }
 
