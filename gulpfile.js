@@ -1,8 +1,14 @@
-import { src, dest, watch } from 'gulp';
+import { src, dest, watch, series } from 'gulp';
 import * as dartSass from 'sass'; // Se trae la librería Dart Sass para que gulp-sass la use
 import gulpSass from 'gulp-sass'; // Gulp-Sass compila Sass usando la librería Dart Sass
 
 const sass = gulpSass( dartSass ); // Se le pasa la librería Dart Sass a gulp-sass
+
+export function js(done){
+    src('src/js/app.js')
+        .pipe( dest('build/js') )
+    done()
+}
 
 export function css(done){
     //ubica el archivo scss
@@ -16,4 +22,7 @@ export function css(done){
 
 export function dev(){// no se necesita el done por que no se esta ejecutando una tarea asincrona
     watch( 'src/scss/**/*.scss', css ) // Se le pasa la tarea css para que se ejecute cuando se detecten cambios en los archivos Sass
+    watch( 'src/js/**/*.js', js )
 }
+
+export default series( js, css, dev ) // Se ejecutan las tareas js, css y dev en serie
