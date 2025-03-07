@@ -30,7 +30,7 @@
     display: grid;
     place-items: center;
     animation: fadeIn ease-in .5s;
-    
+
     &.fadeOut{
         animation: fadeOut ease-in .5s;
     }
@@ -38,6 +38,18 @@
         max-width: 100rem;
 
     }
+}
+.cerrar-modal{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: v.$blanco;
+    border: none;
+    color: v.$negro;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 @keyframes fadeIn{

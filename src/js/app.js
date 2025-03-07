@@ -26,17 +26,23 @@ function mostrarImagen(i){
     imagen.alt = 'Imagen galeria';
     
     // Generar Modal
-
     const modal = document.createElement('DIV');
     modal.classList.add('modal');
     modal.onclick = cerrarModal;
+    
+    // Boton cerrar modal
+    const cerrarModalBtn = document.createElement('BUTTON');
+    cerrarModalBtn.textContent = 'X';
+    cerrarModalBtn.classList.add('cerrar-modal');
+    cerrarModalBtn.onclick = cerrarModal;
+
     modal.appendChild(imagen);
+    modal.appendChild(cerrarModalBtn);
 
     // Agregar al HTML
     const body = document.querySelector('body');
     body.classList.add('no-scroll');
     body.appendChild(modal);
-    
 
     console.log(modal);
 }
