@@ -4,7 +4,7 @@
 .sobre-festival{
     @include m.contenedor;
     @include m.tablet{
-        @include m.grid(2);
+        @include m.grid(2); // mixin de grid que recibe por parametro numero de cols y gap
     }
 }
 
