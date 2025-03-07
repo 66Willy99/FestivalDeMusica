@@ -23,3 +23,8 @@
     }
         
 }
+.modal{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(v.$negro, .5);
+}

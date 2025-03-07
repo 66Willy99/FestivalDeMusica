@@ -577,6 +577,12 @@ body > section {
   object-fit: cover;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .contenedor-boletos {
   background-color: #4CB8B3;
 }
