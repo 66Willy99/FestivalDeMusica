@@ -6,12 +6,11 @@ const sass = gulpSass( dartSass ); // Se le pasa la librería Dart Sass a gulp-s
 
 export function css(done){
     //ubica el archivo scss
-    src('src/scss/app.scss') // Archivo de entrada que se usa para ubicar los archivos Sass
+    src('src/scss/app.scss', {sourcemaps: true}) // Archivo de entrada que se usa para ubicar los archivos Sass y tambien crear el sourcemap
         //compila el archivo scss
         .pipe( sass().on('error', sass.logError) ) // Una vez ubicado el archivo busca el pipe para realizar la tarea y en caso de haber un error lo muestra en consola
         //Guarda el archivo css en la carpeta build/css
-        .pipe( dest('build/css') )
-
+        .pipe( dest('build/css', {sourcemaps: '.'}) ) // Una vez compilado el archivo lo guarda en la carpeta build/css junto con el sourcemap
     done()
 }
 
