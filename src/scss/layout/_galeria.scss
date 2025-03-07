@@ -27,4 +27,32 @@
     position: fixed;
     inset: 0;
     background-color: rgba(v.$negro, .5);
+    display: grid;
+    place-items: center;
+    animation: fadeIn ease-in .5s;
+    
+    &.fadeOut{
+        animation: fadeOut ease-in .5s;
+    }
+    img{
+        max-width: 100rem;
+
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
