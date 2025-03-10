@@ -91,6 +91,12 @@ function procesarImagenes(file, outputSubDir) {
     sharp(file).avif().toFile(outputFileAvif)
 }
 
+export function html(done){
+    src('index.html')
+        .pipe( dest('build') )
+    done()
+}
+
 export function dev(){// no se necesita el done por que no se esta ejecutando una tarea asincrona
     watch( 'src/scss/**/*.scss', css ) // Se le pasa la tarea css para que se ejecute cuando se detecten cambios en los archivos Sass
     watch( 'src/js/**/*.js', js )
@@ -98,4 +104,4 @@ export function dev(){// no se necesita el done por que no se esta ejecutando un
 }
 
 export default series( imagenes, crop, js, css, dev) // Se ejecutan las tareas js, css y dev en serie
-export const build = series(imagenes, crop, js, css); // Se ejecutan las tareas js, css y dev en serie
+export const build = series(imagenes, crop, js, css, html); // Se ejecutan las tareas js, css y dev en serie
