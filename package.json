@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/66Willy99/FestivalDeMusica#readme",
   "devDependencies": {
+    "glob": "^11.0.1",
     "gulp": "^5.0.0",
     "gulp-sass": "^6.0.0",
     "gulp-terser": "^2.1.0",
