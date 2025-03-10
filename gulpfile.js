@@ -98,3 +98,4 @@ export function dev(){// no se necesita el done por que no se esta ejecutando un
 }
 
 export default series( imagenes, crop, js, css, dev) // Se ejecutan las tareas js, css y dev en serie
+export const build = series(imagenes, crop, js, css); // Se ejecutan las tareas js, css y dev en serie
