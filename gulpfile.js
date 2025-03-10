@@ -10,6 +10,7 @@ import gulpSass from 'gulp-sass'; // Gulp-Sass compila Sass usando la librería 
 const sass = gulpSass( dartSass ); // Se le pasa la librería Dart Sass a gulp-sass
 
 import terser from 'gulp-terser'; // Minifica el archivo JS
+import sharp from 'sharp'; // Librería para redimensionar imágenes
 
 export function js(done){
     src('src/js/app.js')
@@ -63,4 +64,4 @@ export function dev(){// no se necesita el done por que no se esta ejecutando un
     watch( 'src/js/**/*.js', js )
 }
 
-export default series( js, css, dev) // Se ejecutan las tareas js, css y dev en serie
+export default series(crop, js, css, dev) // Se ejecutan las tareas js, css y dev en serie
