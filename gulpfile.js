@@ -1,3 +1,9 @@
+// Tarea para copiar videos a build/video
+export function videos(done) {
+    src('video/**/*.{mp4,ogv,webm}')
+        .pipe(dest('build/video'));
+    done();
+}
 // Importa las librerías necesarias
 import path from 'path';
 import fs from 'fs';
@@ -63,13 +69,15 @@ export async function crop(done) {
 
 
 export async function imagenes(done) {
-    const srcDir = './src/img';
-    const buildDir = './build/img';
-    const images =  await glob('./src/img/**/*{jpg,png}')
+    const srcDir = path.resolve('src/img');
+    const buildDir = path.resolve('build/img');
+    const images = await glob('src/img/**/*.{jpg,png}');
 
     images.forEach(file => {
-        const relativePath = path.relative(srcDir, path.dirname(file));
-        const outputSubDir = path.join(buildDir, relativePath);
+        // Mantener la estructura de subcarpetas completa desde src/img
+        const relativePath = path.relative(srcDir, file); // incluye el nombre del archivo
+        const outputFile = path.join(buildDir, relativePath);
+        const outputSubDir = path.dirname(outputFile);
         procesarImagenes(file, outputSubDir);
     });
     done();
@@ -101,7 +109,9 @@ export function dev(){// no se necesita el done por que no se esta ejecutando un
     watch( 'src/scss/**/*.scss', css ) // Se le pasa la tarea css para que se ejecute cuando se detecten cambios en los archivos Sass
     watch( 'src/js/**/*.js', js )
     watch( 'src/img/**/*.{png,jpg}', imagenes )
+    watch( 'index.html', html ) // Copia index.html a build cuando cambie
+    watch( 'video/**/*.{mp4,ogv,webm}', videos ) // Copia videos a build/video cuando cambien
 }
 
-export default series( imagenes, crop, js, css, dev) // Se ejecutan las tareas js, css y dev en serie
-export const build = series(imagenes, crop, js, css, html); // Se ejecutan las tareas js, css y dev en serie
+export default series( imagenes, crop, js, css, videos, dev) // Se ejecutan las tareas js, css, videos y dev en serie
+export const build = series(imagenes, crop, js, css, html, videos); // Se ejecutan las tareas js, css, html, videos en serie
